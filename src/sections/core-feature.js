@@ -57,6 +57,7 @@ const styles = {
       pr: [0, null, 6, 7, 6],
     },
   },
+  
   thumbnail: {
     display: 'inline-flex',
     position: 'relative',

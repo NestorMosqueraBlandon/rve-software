@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Container, Grid } from 'theme-ui';
+import { Container, Grid, Box } from 'theme-ui';
 import SectionHeader from '../components/section-header';
 import FeatureCardColumn from 'components/feature-card-column.js';
 import Performance from 'assets/key-feature/performance.svg';
@@ -8,6 +8,7 @@ import Partnership from 'assets/key-feature/partnership.svg';
 import Subscription from 'assets/key-feature/subscription.svg';
 import Support from 'assets/key-feature/support.svg';
 import FeatureCard from 'components/feature-card';
+import TextFeature from 'components/text-feature';
 
 const data = [
   {
@@ -46,12 +47,17 @@ const data = [
 
 export default function KeyFeature() {
   return (
-   <section sx={{variant: 'section.keyFeature'}} id="feature">
+    <section sx={{ variant: 'section.keyFeature' }} id="feature">
       <Container>
-        <SectionHeader 
-          slogan="Lo que nos ditinge"
-          title="En colaboración con nuestros queridos clientes, hemos creado soluciones innovadoras para sus necesidades comerciales únicas."
-        />
+
+        <Box sx={styles.contentBox}>
+          <TextFeature
+            subTitle="Lo que nos distingue"
+            description="En colaboración con nuestros queridos clientes, hemos creado soluciones innovadoras para sus necesidades comerciales únicas."
+          />
+        </Box>
+
+
 
         <Grid sx={styles.grid}>
           {data.map((item) => (
@@ -65,7 +71,7 @@ export default function KeyFeature() {
           ))}
         </Grid>
       </Container>
-   </section>
+    </section>
   );
 }
 
@@ -82,6 +88,7 @@ const styles = {
       '50px 40px',
       '55px 90px',
     ],
+ 
     gridTemplateColumns: [
       'repeat(1,1fr)',
       null,
@@ -89,5 +96,11 @@ const styles = {
       null,
       'repeat(4,1fr)',
     ],
+  },
+  contentBox: {
+    width: ['100%', null, null, 315, 390, 450, null, 500],
+    flexShrink: 0,
+    mb: [7, null, 60, 0],
+    textAlign: ['center', null, null, 'left'],
   },
 };

@@ -12,25 +12,25 @@ const data = [
     id: 1,
     title: 'Concepto',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      '',
   },
   {
     id: 2,
     title: 'Presupuesto',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      '',
   },
   {
     id: 3,
     title: 'Desarrollo',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      '',
   },
   {
     id: 4,
     title: 'Resultados',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      '',
   },
 ];
 

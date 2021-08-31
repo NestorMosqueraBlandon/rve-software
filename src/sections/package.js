@@ -7,14 +7,15 @@ import PriceCard from 'components/price-card';
 import ButtonGroup from 'components/button-group';
 import SectionHeader from 'components/section-header';
 import { IoIosCheckmarkCircle, IoIosCloseCircle } from 'react-icons/io';
+import TextFeature from 'components/text-feature';
 
 const packages = {
   monthly: [
     {
       id: 1,
-      name: 'Free Plan',
-      description: 'For Small teams or office',
-      buttonText: 'Start free trail',
+      name: 'Prueba Gratis',
+      description: 'Para equipos pequeños u oficina',
+      buttonText: 'Prueba gratis',
       priceWithUnit: '$0',
       points: [
         {
@@ -45,11 +46,11 @@ const packages = {
     },
     {
       id: 2,
-      name: 'Business king',
-      description: 'For Enterprise business',
-      priceWithUnit: '$15',
-      buttonText: 'Create account',
-      anotherOption: 'Or Start 14 Days trail',
+      name: 'Rey de los negocios',
+      description: 'Para negocios empresariales',
+      priceWithUnit: '$60,000',
+      buttonText: 'Crear Cuenta',
+      anotherOption: 'O Empieza 14 Dias de prueba',
       points: [
         {
           id: 1,
@@ -79,13 +80,13 @@ const packages = {
     },
     {
       id: 3,
-      header: 'Suggested',
+      header: 'Sugerido',
       headerIcon: <IoIosCheckmarkCircle />,
       name: 'Pro Master',
-      description: 'For pro level developers',
-      priceWithUnit: '$24',
-      buttonText: 'Create account',
-      anotherOption: 'Or Start 14 Days trail',
+      description: 'Para desarrolladoras de nivel profesional',
+      priceWithUnit: '$100,000',
+      buttonText: 'Crear Cuenta',
+      anotherOption: 'O Empieza 14 dias de prueba',
       points: [
         {
           id: 1,
@@ -242,6 +243,26 @@ const responsive = {
 export default function Package() {
   const { monthly, annual } = packages;
 
+  const [state, setState] = useState({
+    active: 'monthly',
+    pricingPlan: monthly,
+  })
+
+  console.log(state)
+  const handlePricingPlan = (plan) => {
+    if (plan === 'annual') {
+      setState({
+        active: 'annual',
+        pricingPlan: annual,
+      })
+    } else {
+      setState({
+        active: 'monthly',
+        pricingPlan: monthly,
+      })
+    }
+  }
+
   const sliderParams = {
     additionalTransfrom: 0,
     arrows: false,
@@ -266,7 +287,51 @@ export default function Package() {
   };
 
   return (
-    <h1>Package</h1>
+    <section id="pricing" sx={{ variant: 'section.pricing' }}>
+      <Container>
+
+
+
+        <Box sx={styles.contentBox}>
+
+          <TextFeature
+            subTitle="Planes"
+            title="Elije tu plan"
+          />
+        </Box>
+        <Flex sx={styles.buttonGroup}>
+          <Box sx={styles.buttonGroupInner}>
+            <button
+              className={state.active == 'monthly' ? 'active' : ''}
+              type="button"
+              aria-label="Monthly"
+              onClick={() => handlePricingPlan('monthly')}
+            >
+              Plan Mensual
+
+            </button>
+            <button
+              className={state.active == 'annual' ? 'active' : ''}
+              type="button"
+              aria-label="Annual"
+              onClick={() => handlePricingPlan('annual')}
+            >
+              Plan Anual
+
+            </button>
+          </Box>
+        </Flex>
+        <Box sx={styles.pricingWrapper} className="pricing__wrapper">
+          <Carousel {...sliderParams}>
+            {state.pricingPlan.map((packageData) => (
+              <Box sx={styles.pricingItem} key={packageData.id}>
+                <PriceCard data={packageData} />
+              </Box>
+            ))}
+          </Carousel>
+        </Box>
+      </Container>
+    </section>
   );
 }
 
@@ -333,6 +398,12 @@ const styles = {
     mt: ['-15px', '-35px'],
     position: 'relative',
     zIndex: 2,
+  },
+  contentBox: {
+    width: ['100%', null, null, 315, 390, 450, null, 500],
+    flexShrink: 0,
+    mb: [7, null, 60, 0],
+    textAlign: ['center', null, null, 'left'],
   },
   buttonGroupInner: {
     display: 'flex',
