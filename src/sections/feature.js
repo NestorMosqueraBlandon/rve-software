@@ -13,34 +13,34 @@ const data = [
   {
     id: 1,
     imgSrc: Performance,
-    altText: 'Fast Performance',
+    altText: 'Rendimiento Rapido',
     title: 'Rendimiento Rapido',
     text:
-      '',
+      'Mejora la experiencia de los clientes, permitiendo una interacción mas amigable  con el ambiente del software.',
   },
   {
     id: 2,
     imgSrc: Partnership,
-    altText: 'Pro Subscription',
+    altText: 'Subscripcion Pro',
     title: 'Subscripcion Pro',
     text:
-      '',
+      'Ser Pro te trae muchos mas beneficios "Soporte 24 7 de los 365 días del año"',
   },
   {
     id: 3,
     imgSrc: Subscription,
-    altText: 'Partnership deal',
+    altText: 'Acuerdo de asociacionl',
     title: 'Acuerdo de asociacion',
     text:
-      '',
+      'Como compañía garantizamos a nuestros aliados responsabilidad y compromiso.',
   },
   {
     id: 4,
     imgSrc: Support,
-    altText: 'Customer Support',
+    altText: 'Atencion al cliente',
     title: 'Atencion al cliente',
     text:
-      '',
+      'Siempre pensamos en ti. Estamos siempre en búsqueda de soluciones que te permitan tener una mejor experiencia.',
   },
 ];
 

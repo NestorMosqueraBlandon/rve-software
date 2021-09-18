@@ -11,26 +11,26 @@ const data = [
   {
     id: 1,
     title: 'Concepto',
-    text:
-      '',
+    text: 
+      'Tomamos tus idea, la ilustramos de tal forma que puedas apreciar lo que te podemos ofrecer.',
   },
   {
     id: 2,
     title: 'Presupuesto',
     text:
-      '',
+      ' Planificamos los costo y tiempos de entrega  con el objetivo de ofrecerte el mejor precio posible.',
   },
   {
     id: 3,
     title: 'Desarrollo',
     text:
-      '',
+      'Elaboramos de forma precisa tus instrucciones y requerimientos con un altos estándares calidad.',
   },
   {
     id: 4,
     title: 'Resultados',
     text:
-      '',
+      ' Después de testear rigorosamente el producto final, se hace entrega de este. ',
   },
 ];
 

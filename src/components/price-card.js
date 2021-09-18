@@ -11,6 +11,7 @@ export default function PriceCard({
     buttonText = 'Prueba Gratis',
     anotherOption,
     points,
+    type,
   },
 }) {
   return (
@@ -30,7 +31,7 @@ export default function PriceCard({
         <List items={points} childStyle={styles.listItem} />
         <Text className="package__price" sx={styles.price}>
           {priceWithUnit}
-          <span>/Monthly</span>
+          <span>/{type}</span>
         </Text>
       <Box sx={styles.buttonGroup}>
         <Button variant="primary" aria-label={buttonText}>
