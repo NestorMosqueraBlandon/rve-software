@@ -246,7 +246,7 @@ const packages = {
         {
           id: 4,
           icon: <IoIosCheckmarkCircle color ="#000000"/>,
-          text: 'Incluye los Servicio de la Plan Refresh',
+          text: 'Incluye los Servicio de la Plan Basic',
           isAvailable: true,
         },
       ],
